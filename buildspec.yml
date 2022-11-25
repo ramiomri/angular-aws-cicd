@@ -8,11 +8,11 @@ env:
 phases:
   install:
     runtime-versions:
-        nodejs: 14
+        nodejs: 14.20
     commands:
         - echo Installing source NPM dependencies...
         - npm install
-        - npm install -g @angular/cli npm@latest
+        - npm install -g @angular/cli
   build:
     commands:
         - echo Build started 
