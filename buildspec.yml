@@ -10,6 +10,13 @@ phases:
     runtime-versions:
         nodejs: 14
     commands:
+        # Get Chrome Information
+        - curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+        - echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
+        - apt-get -y update
+        # Install chrome
+        - apt-get -y install google-chrome-stable
+
         - echo Installing source NPM dependencies...
         - npm install
         - npm install -g @angular/cli@11.0.7
