@@ -15,7 +15,7 @@ phases:
         - echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
         - apt-get -y update
         # Install chrome
-        # - apt-get -y install google-chrome-stable
+        - apt-get -y install google-chrome-stable
 
         - echo Installing source NPM dependencies...
         - npm install
@@ -25,9 +25,6 @@ phases:
         - npm i @angular-devkit/build-angular
         # Print out missing libs
         - echo "Missing Libs" || ldd ./node_modules/puppeteer/.local-chromium/linux-549031/chrome-linux/chrome | grep not
-
-        # Upgrade apt
-        - apt-get upgrade
 
         # Update libs
         - apt-get update
